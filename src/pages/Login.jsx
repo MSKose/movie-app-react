@@ -9,10 +9,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signIn(email, password, navigate)
-    // const displayName = `${firstName} ${lastName}`;
-    // console.log(firstName, lastName);
-    // createUser(email, password, navigate, displayName);
+    signIn(email, password, navigate);
   };
 
   return (

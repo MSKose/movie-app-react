@@ -26,6 +26,8 @@ export const createUser = async (email, password, navigate) => {
   try {
     let userCredential = await createUserWithEmailAndPassword(auth, email, password);
     navigate("/");
+    console.log(userCredential)
+    sessionStorage.setItem("user", JSON.stringify(userCredential.user))
   } catch (error) {
     console.log(error);
   }
@@ -34,6 +36,8 @@ export const createUser = async (email, password, navigate) => {
 export const signIn = async (email, password, navigate) => {
   try {
     let userCredential = await signInWithEmailAndPassword(auth, email, password);
+    console.log(userCredential)
+    sessionStorage.setItem("user", JSON.stringify(userCredential.user))
     navigate("/");
   } catch (error) {
     console.log(error);

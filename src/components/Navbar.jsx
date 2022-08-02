@@ -5,8 +5,9 @@ import { AuthContext } from "../context/AuthContext";
 const Navbar = () => {
   const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
+  // console.log({currentUser})
   // const currentUser = {displayName: "Mustafa"};
-  // const currentUser = false;
+  // const currentUser = true;
   return (
     <div>
       <nav className="navbar navbar-expand-lg">
@@ -18,7 +19,7 @@ const Navbar = () => {
             {currentUser ? (
               <>
                 <h5 className="mb-0 text-capitalize">
-                  {currentUser.displayName}
+                  {/* {currentUser.displayName} */}
                 </h5>
                 <button className="ms-2 btn btn-outline-light">Logout</button>
               </>

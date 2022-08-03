@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { logOut } from "../auth/firebase";
 import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
-  // console.log({currentUser})
-  // const currentUser = {displayName: "Mustafa"};
+  console.log({currentUser})
+  // const currentUser = {displayName: displayName};
   // const currentUser = true;
   return (
     <div>
@@ -19,9 +20,10 @@ const Navbar = () => {
             {currentUser ? (
               <>
                 <h5 className="mb-0 text-capitalize">
-                  {/* {currentUser.displayName} */}
+                  {currentUser.displayName}
                 </h5>
-                <button className="ms-2 btn btn-outline-light">Logout</button>
+                <button className="ms-2 btn btn-outline-light"
+                onClick={() => logOut()}>Logout</button>
               </>
             ) : (
               <>
